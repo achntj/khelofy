@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import NewsCard from "@/components/NewsCard";
 import React, { useEffect, useState } from "react";
 
 export default function Home() {
@@ -22,22 +23,18 @@ export default function Home() {
     <Container>
       {" "}
       <div>
-        <div className="grid grid-cols-3 gap-5 max-w-6xl mx-auto">
+        <h1 className="uppercase my-10 tracking-wide">
+          What’s happening in Sports
+        </h1>
+
+        <div className="grid grid-cols-3 gap-5">
           {feedItems.map((item, index) => (
-            <div
-              className="my-10 border bg-neutral-100 p-5 rounded-md"
+            <NewsCard
               key={index}
-            >
-              <h2 className="text-xl font-bold">{item.title}</h2>
-              <p>{item.contentSnippet}</p>
-              <a
-                href={item.link}
-                target="_blank"
-                className="text-blue-400 underline"
-              >
-                Read more
-              </a>
-            </div>
+              title={item.title}
+              content={item.contentSnippet}
+              link={item.link}
+            />
           ))}
         </div>
       </div>
