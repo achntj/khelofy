@@ -9,7 +9,7 @@ export default function ThinNav() {
       <Link href="/news/americanfootball">American Football</Link>
       <Link href="/news/basketball">Basketball</Link>
       <Link href="/news/golf">Golf</Link>
-      <Link href="/news/hockey">hockey</Link>
+      <Link href="/news/hockey">Hockey</Link>
       <Link href="/news/baseball">Baseball</Link>
       <Link href="/news/tennis">Tennis</Link>
       <Link href="/news/badminton">Badminton</Link>
