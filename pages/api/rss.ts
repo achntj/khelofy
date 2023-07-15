@@ -6,7 +6,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { query, limit = 9 } = req.query;
-  let URL;
+  let URL: string;
   if (!query)
     URL =
       "https://news.google.com/rss/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRFp1ZEdvU0JXVnVMVlZUR2dKVlV5Z0FQAQ?hl=en-IN&gl=IN&ceid=IN:en";
@@ -22,7 +22,7 @@ export default async function handler(
       // "https://news.google.com/rss/topics/caaqkggkiirdqkftrlfvsuwymhznrfp1zedvu0jxvnvmvlzur2dkvlv5z0fqaq?hl=en-us&gl=us&ceid=us:en"
       // "https://news.google.com/rss/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRFp1ZEdvU0JXVnVMVlZUR2dKVlV5Z0FQAQ?hl=en-IN&gl=IN&ceid=IN:en"
     );
-    const limitedItems = feed.items.slice(0, limit); // Limit the items to the first 10
+    const limitedItems = feed.items.slice(0, parseInt(limit as string)); // Limit the items to the first 10
     console.log(limit);
     res.status(200).json(limitedItems);
   } catch (error) {
