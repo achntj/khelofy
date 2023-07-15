@@ -1,6 +1,10 @@
 import Parser from "rss-parser";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const { query, limit = 9 } = req.query;
   let URL;
   if (!query)
